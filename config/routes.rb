@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-
   resources :users
   resources :microposts
   resources :sessions, only: [:new, :create, :destroy]
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy , :show]
 end
