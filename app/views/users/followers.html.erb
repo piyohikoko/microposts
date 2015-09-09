@@ -1,0 +1,6 @@
+<h3>follower list (<%= @followers.count %>)</h3>
+<% @followers.each do |u| %>
+  <ul>
+    <%= u.name %>
+  </ul>
+<% end %>

@@ -11,6 +11,8 @@
             <p>居住地：<%= @user.place %></p>
             <p>自己紹介 <%= @user.selfintroduction %></p>
         </div>
+        <%= link_to "Follow", followings_user_path, method: "get" %>
+        <%= link_to "Follower", followers_user_path, method: "get" %>
     </section>
   </aside>
     <div class="col-md-8">
@@ -23,18 +25,4 @@
       <% end %>
     </div>
   <p>If you want to edit your profile <%= link_to "check here", edit_user_path %></p>
-</div>
-<div class="row"> 
-  <div class="col-md-6">
-    <h3>follow list (<%= @followings.count %>)</h3>
-    <ol class="followings">
-      <%= render partial: 'users/followings' %>
-    </ol>
-  </div>
-  <div class="col-md-6">
-    <h3>follower list (<%= @followers.count %>)</h3>
-    <ol class="followers">
-      <%= render partial: 'users/followers' %>
-    </ol>
-  </div>
 </div>
